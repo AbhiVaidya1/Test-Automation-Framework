@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+	<Appenders> <!-- Provides logs in Console of Eclipse-->
+		<Console name="Console" target="SYSTEM_OUT">
+
+			<PatternLayout
+				pattern="%d{dd-MMM-YYYY HH:mm:ss} [%t] %level %logger::%M::%L %msg %n"></PatternLayout>
+		</Console>
+
+		<File name="FileLogger" fileName="logs/automation.log" append="false">
+
+			<PatternLayout
+				pattern="%d{dd-MMM-YYYY HH:mm:ss} [%t] %level %logger::%M::%L %msg %n"></PatternLayout>
+		</File>
+	</Appenders>
+<!-- Levels of Logs are 1.TRACE(used when loop, state of instance variable) 2.DEBUG(used in complex code)
+3.INFO(ex Methods what they do, some info etc), 4.WARNING(Some warning), 5. ERROR(exception, assertions)
+6.FATAL(like unable to connect to DB)-->
+	<Loggers>
+		<Root level="info"> <!--info,warning,error and fatal logs are captured, if trace was there then trace,debug
+		,info,warning,error and fatal logs are captured -->
+			<AppenderRef ref="Console"></AppenderRef>
+			<AppenderRef ref="FileLogger"></AppenderRef>
+		</Root>
+
+	</Loggers>
+
+
+</Configuration>

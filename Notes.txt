@@ -1,0 +1,23 @@
+Notes:
+1. What is the difference between class and object in Java ?
+Class is a blueprint or a template that defines the properties That means attributes and behaviours or methods of objects.
+Class is a logical entity that holds the structure and logic of objects .
+No object, An object is an instance of a class . It represents a real world entity and holds actual data  
+Open a class is instantiated using new keyword it creates an object with values assigned to its attributes . 
+
+2. What is a constructor in Java and what's its purpose ?  
+A constructor is a special method used to initialize instance variables it has same name as class and has no return type .  
+refers to the Instance Variable<-this.name = name;
+
+3. @Test(description = "Verifies user able to login to the application", groups = {"e2e","sanity"}, 
+			dataProviderClass = com.ui.dataproviders.LoginDataProvider.class, dataProvider = "LoginTestDataProvider")
+Whenever Using DataProviders,1. dataProviderClass and dataProvider name as below
+ex:
+/***public class LoginDataProvider {
+
+	@DataProvider(name = "LoginTestDataProvider")
+	public Iterator<Object[]> loginDataProvider() throws FileNotFoundException {***/
+Whenever Dataprovider used in Test method, we have to make test parameterized.
+ex: /***public void loginTest(User user) {***/
+
+4. To read json, we use gson library, to read csv file Open CSV library(csv: Comma Separated Value)
