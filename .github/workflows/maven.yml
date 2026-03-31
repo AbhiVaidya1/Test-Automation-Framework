@@ -27,14 +27,14 @@ jobs:
       
     - name: Upload Test logs
       if: always()
-      uses: actions/download-artifact@v4.4.3
+      uses: actions/download-artifact@v8
       with:
        name: Test logs
        path: logs/
 
     - name: Upload Test Reports
       if: always()
-      uses: actions/download-artifact@v4.4.3
+      uses: actions/download-artifact@v8
       with:
        name: Test Reports
        path: report.html
