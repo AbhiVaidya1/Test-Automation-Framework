@@ -21,3 +21,7 @@ Whenever Dataprovider used in Test method, we have to make test parameterized.
 ex: /***public void loginTest(User user) {***/
 
 4. To read json, we use gson library, to read csv file Open CSV library(csv: Comma Separated Value)
+
+5. Git Hub Actions:
+Workflow Name: "Test Pipeline", will be displayed in the Git Hub Actions Dashboard.
+Triggers: Events when
