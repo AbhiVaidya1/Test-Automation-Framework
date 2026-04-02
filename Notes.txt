@@ -24,4 +24,10 @@ ex: /***public void loginTest(User user) {***/
 
 5. Git Hub Actions:
 Workflow Name: "Test Pipeline", will be displayed in the Git Hub Actions Dashboard.
-Triggers: Events when
+Triggers: Events when the workflow needs to be executed.
+On schedule: cron: "30 23 * * *", 30-Min,23-Hr, *-Month, *-Date, *-Day
+Schedule: Defines that the workflow will be triggerred everyday 11:30 PM UTC.
+jobs: 
+build: ubuntu-latest-> Runner
+The "build" job will run on the latest version of the Ubuntu env provided by GitHub.
+Steps: defines the actions or commands that need to be executed within the job.
