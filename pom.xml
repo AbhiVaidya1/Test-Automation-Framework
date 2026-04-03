@@ -20,7 +20,8 @@
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<systemPropertyVariables>
-						<!-- <browser>chrome</browser> --> <!-- Added below line to run through gitbash and maven command-->
+						<!-- <browser>chrome</browser> --> <!-- Added below line to run
+						through gitbash and maven command-->
 						<!--The maven command: mvn test -Dbrowser=chrome -DisLambdaTest=false -DisHeadless=true -X-->
 						<browser>${browser}</browser>
 						<!--<isLambdaTest>false</isLambdaTest> -->
@@ -116,6 +117,14 @@
 			<groupId>com.aventstack</groupId>
 			<artifactId>extentreports</artifactId>
 			<version>5.1.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Source:
+		https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>6.3.4</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>
