@@ -78,10 +78,10 @@ public class BrowserUtility { //Made concrete so it can be instantiated from tes
 			ChromeOptions options = new ChromeOptions();
 			// Use modern headless mode and add common flags that prevent Chrome from crashing
 			//options.setHeadless(true); // uses the standard headless flag (not available in older Selenium versions)
-			options.addArguments("--headless");
+			options.addArguments("--headless=new");
 			options.addArguments("--window-size=1920,1080");
 			options.addArguments("--disable-gpu"); // recommended for some Windows setups
-			options.addArguments("--no-sandbox");
+			options.addArguments("--no-sandbox"); // for linux vm in github actions
 			options.addArguments("--disable-dev-shm-usage");
 			// Allow remote origins to avoid ChromeDriver/Chrome handshake issues on newer versions
 			options.addArguments("--remote-allow-origins=*");
