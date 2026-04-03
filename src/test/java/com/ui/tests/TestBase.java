@@ -40,7 +40,8 @@ public class TestBase {
 			
 			LambdaTestUtility.initializeLambdaTestSession(browser,result.getMethod().getMethodName());
 			//homePage = new HomePage(CHROME,isHeadless);
-			homePage = new HomePage(Browser.valueOf(browser.toUpperCase()),isHeadless);
+			//homePage = new HomePage(Browser.valueOf(browser.toUpperCase()),isHeadless);
+			homePage = new HomePage(Browser.CHROME,isHeadless);
 		}
 		else {
 			//Running test on Local Machine
