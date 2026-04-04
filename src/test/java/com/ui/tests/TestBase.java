@@ -17,53 +17,49 @@ import com.utility.LoggerUtility;
 
 public class TestBase {
 //*****Whenever we are going to create a Test class, which will be going to extend this TestBase Class
-	
-	protected HomePage homePage;
-	Logger logger =LoggerUtility.getLogger(this.getClass()); 
-	
-	private boolean isLambdaTest;
-	//private boolean isHeadless = true; used below
-	
 
-	@Parameters({"browser", "isLambdaTest","isHeadless"}) //testng parameters are mapped to method's parameters
+	protected HomePage homePage;
+	Logger logger = LoggerUtility.getLogger(this.getClass());
+
+	private boolean isLambdaTest;
+	// private boolean isHeadless = true; used below
+
+	@Parameters({ "browser", "isLambdaTest", "isHeadless" }) // testng parameters are mapped to method's parameters
 	@BeforeMethod(description = "Load homepage of the website!")
-	//public void setUp(String browser, boolean isLambdaTest, boolean isHeadless, ITestResult result) {
-	public void setUp(
-			@Optional("chrome") String browser, 
-			@Optional("false") boolean isLambdaTest, 
+	// public void setUp(String browser, boolean isLambdaTest, boolean isHeadless,
+	// ITestResult result) {
+	public void setUp(@Optional("chrome") String browser, @Optional("false") boolean isLambdaTest,
 			@Optional("true") boolean isHeadless, ITestResult result) {
-		
-		
-		this.isLambdaTest = isLambdaTest; //left value refers to instance variable
+
+		this.isLambdaTest = isLambdaTest; // left value refers to instance variable
 		WebDriver lambdaDriver;
-		if(isLambdaTest) {
-			
-			LambdaTestUtility.initializeLambdaTestSession(browser,result.getMethod().getMethodName());
-			//homePage = new HomePage(CHROME,isHeadless);
-			//homePage = new HomePage(Browser.valueOf(browser.toUpperCase()),isHeadless);
-			homePage = new HomePage(Browser.CHROME,isHeadless);
-		}
-		else {
-			//Running test on Local Machine
-		//homePage = new HomePage(Browser.CHROME,isHeadless); //static import, no need to BrowserName.CHROME, JUST CHROME
-			homePage = new HomePage(Browser.valueOf(browser),isHeadless); //not working
+		if (isLambdaTest) {
+
+			LambdaTestUtility.initializeLambdaTestSession(browser, result.getMethod().getMethodName());
+			// homePage = new HomePage(CHROME,isHeadless);
+			// homePage = new HomePage(Browser.valueOf(browser.toUpperCase()),isHeadless);
+			homePage = new HomePage(Browser.CHROME, isHeadless);
+		} else {
+			// Running test on Local Machine
+			homePage = new HomePage(Browser.CHROME, isHeadless); // static import, no need to BrowserName.CHROME, JUST
+																	// CHROME
+			// homePage = new HomePage(Browser.valueOf(browser),isHeadless); //not workin
 			logger.info("Trying to perform click to go to Sign In page");
 		}
 	}
-	
+
 	public BrowserUtility getInstance() {
-		return homePage; //returning object from child class HomePage, but adding return Type as Parent 
-		//class i.e., BrowserUtitlity
+		return homePage; // returning object from child class HomePage, but adding return Type as Parent
+		// class i.e., BrowserUtitlity
 	}
-	
+
 	@AfterMethod(description = "Tear Down the browser")
 	public void tearDown() {
-		
-		if(isLambdaTest) {
-			LambdaTestUtility.quitSession(); //quit or close browsers session on LambdaTest cloud
-		}
-		else {
-		homePage.quit(); //local
+
+		if (isLambdaTest) {
+			LambdaTestUtility.quitSession(); // quit or close browsers session on LambdaTest cloud
+		} else {
+			homePage.quit(); // local
 		}
 	}
 }
