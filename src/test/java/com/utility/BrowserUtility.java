@@ -171,7 +171,9 @@ public class BrowserUtility { //Made concrete so it can be instantiated from tes
 		Date date = new Date();
 		SimpleDateFormat format = new SimpleDateFormat("HH-mm-ss");
 		String timeStamp = format.format(date);
-		String path = System.getProperty("user.dir")+"//screenshots//"+ name+" - "+timeStamp+".png"; //need a path to store SS
+		//String path = System.getProperty("user.dir")+"//screenshots//"+ name+" - "+timeStamp+".png"; //need a path to store SS
+		//can be written above step as below, making it as relative path instead absolute path
+		String path = "./screenshots/"+ name+" - "+timeStamp+".png";
 		File screenshotFile = new File(path);
 		try {
 			FileUtils.copyFile(screenshotData, screenshotFile);
