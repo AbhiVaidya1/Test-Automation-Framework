@@ -45,8 +45,8 @@ public class TestBase {
 		}
 		else {
 			//Running test on Local Machine
-		homePage = new HomePage(Browser.CHROME,isHeadless); //static import, no need to BrowserName.CHROME, JUST CHROME
-			//homePage = new HomePage(Browser.valueOf(browser),isHeadless); //not working
+		//homePage = new HomePage(Browser.CHROME,isHeadless); //static import, no need to BrowserName.CHROME, JUST CHROME
+			homePage = new HomePage(Browser.valueOf(browser),isHeadless); //not working
 			logger.info("Trying to perform click to go to Sign In page");
 		}
 	}
