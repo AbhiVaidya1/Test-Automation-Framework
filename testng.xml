@@ -3,12 +3,17 @@
 <suite name="Automation Practice Test Suite" parallel="methods" thread-count="4"
 	verbose="1">
 	<test name="UI Automation">
-<!--	<parameter name="browser" value="chrome" /> -->
-		<parameter name="browser" value="${browser}" /> <!-- values getting from pom.xml coz of MavenSureFire plugin-->
+		<!--	<parameter name="browser" value="chrome" /> -->
+		<parameter name="browser" value="${browser}" /> <!-- values getting from
+		pom.xml coz of MavenSureFire plugin-->
 		<parameter name="isLambdaTest" value="${isLambdaTest}" />
 		<parameter name="isHeadless" value="${isHeadless}" />
 		<classes>
 			<class name="com.ui.tests.LoginTest" />
+			<class name="com.ui.tests.InvalidCredLoginTest" />
+			<class name="com.ui.tests.AddNewFirstAddressTest" />
+			<class name="com.ui.tests.ProductCheckoutTest" />
+			<class name="com.ui.tests.SearchProductTest" />
 		</classes>
 	</test>
 </suite>

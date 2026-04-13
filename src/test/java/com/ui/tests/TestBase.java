@@ -29,7 +29,7 @@ public class TestBase {
 	// public void setUp(String browser, boolean isLambdaTest, boolean isHeadless,
 	// ITestResult result) {
 	public void setUp(@Optional("chrome") String browser, @Optional("false") boolean isLambdaTest,
-			@Optional("true") boolean isHeadless, ITestResult result) {
+			@Optional("false") boolean isHeadless, ITestResult result) {
 
 		this.isLambdaTest = isLambdaTest; // left value refers to instance variable
 		WebDriver lambdaDriver;
@@ -53,13 +53,13 @@ public class TestBase {
 		// class i.e., BrowserUtitlity
 	}
 
-	@AfterMethod(description = "Tear Down the browser")
-	public void tearDown() {
-
-		if (isLambdaTest) {
-			LambdaTestUtility.quitSession(); // quit or close browsers session on LambdaTest cloud
-		} else {
-			homePage.quit(); // local
-		}
-	}
+//	@AfterMethod(description = "Tear Down the browser")
+//	public void tearDown() {
+//
+//		if (isLambdaTest) {
+//			LambdaTestUtility.quitSession(); // quit or close browsers session on LambdaTest cloud
+//		} else {
+//			homePage.quit(); // local
+//		}
+//	}
 }

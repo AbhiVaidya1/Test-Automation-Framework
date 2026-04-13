@@ -1,0 +1,31 @@
+package com.utility;
+
+import java.util.Locale;
+
+import com.github.javafaker.Faker;
+import com.ui.pojo.AddressPOJO;
+
+public class FakeAddressUtility {
+
+	public static void main(String[] args) {
+		getFakeAddress();
+	}
+
+	public static AddressPOJO getFakeAddress() {
+
+		Faker faker = new Faker(Locale.US);
+//		System.out.println(faker.phoneNumber().phoneNumber());
+
+//		AddressPOJO addressPojo = new AddressPOJO("Google", "address line1", "address line2", "city", "12345",
+//				"7045663552", "7045663552", "other", "office address", "California");
+
+		AddressPOJO addressPojo = new AddressPOJO(faker.company().name(), faker.address().buildingNumber(),
+				faker.address().streetAddress(), faker.address().city(), /*faker.address().zipCode()*/faker.numerify("#####"),
+				faker.phoneNumber().cellPhone(), faker.phoneNumber().cellPhone(), "other", "office address",
+				faker.address().state());
+
+		return addressPojo;
+
+	}
+
+}
