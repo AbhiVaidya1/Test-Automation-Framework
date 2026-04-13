@@ -1,6 +1,6 @@
 
 ## About Me
-Hi, I am Abhishek Vaidya, I have 8 plus years of experience in AUtomation testing using technologies like Selenium Webdriver and Java.
+Hi, I am Abhishek Vaidya, I have 8 plus years of experience in Automation testing using technologies like Selenium Webdriver and Java.
 
 
 # Test Automation Framework
